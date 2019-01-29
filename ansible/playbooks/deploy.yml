@@ -1,0 +1,71 @@
+---
+- hosts: all
+  vars:
+      deploy_dir: "/deploy"
+      application_dir: "/service/rest-service"
+      application_jar_name: "rest-service-latest.jar"
+      application_version: "1.0.0"
+      application_group_id: "org.springframework"
+      application_artifact_id: "rest-service"
+      application_repository_url: "http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc"
+  tasks:
+    - name: Create tools home
+      file:
+        path: "{{ tools_dir }}"
+        state: directory
+        mode: 0755
+    - name: Install PIP
+      apt:
+        name: python-pip
+        state: present
+    - name: Install lxml
+      pip:
+        name: lxml
+
+    - name: Create application home
+      file:
+        path: "{{ app_dir }}"
+        state: directory
+        mode: 0755
+
+    - name: Remove Old Jar
+      shell:  rm -r /service/rest-service/rest-service-latest.jar
+      become: yes
+      ignore_errors: true
+
+    - name: stop  application
+      shell: sudo kill $(cat ./bin/shutdown.pid)
+      ignore_errors: true
+
+    - name: Download jar
+      maven_artifact:
+        group_id: "{{ application_group_id }}"
+        artifact_id: "{{ application_artifact_id }}"
+        version: "{{ application_version }}"
+        repository_url: "{{ application_repository_url }}"
+        dest: "{{ deploy_dir }}/{{ application_jar_name }}"
+        validate_certs: no
+
+    - name: Install add-apt-repostory
+      become: yes
+      apt: name=software-properties-common state=latest
+
+    - name: Add Oracle Java Repository
+      become: yes
+      apt_repository: repo='ppa:webupd8team/java'
+
+    - name: Accept Java 8 License
+      become: yes
+      debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+    - name: Install Oracle Java 8
+      become: yes
+      apt: name={{item}} state=latest
+      with_items:
+        - oracle-java8-installer
+        - ca-certificates
+        - oracle-java8-set-default
+
+    - name: Start Application
+      shell: nohup  java -jar /srv/gs-rest-service/rest-service-latest.jar </dev/null >/dev/null 2>&1 &
+      become: yes
