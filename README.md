@@ -38,15 +38,16 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
             <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
-
     <distributionManagement>
         <repository>
             <id>nexus-dellemc</id>
             <url>http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc/</url>
         </repository>
     </distributionManagement>
+    
     '''
 ###Settings.xml
+
  '''
  <server>
       <id>nexus-dellemc</id>
@@ -61,10 +62,12 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
       <password>admin123</password>
 </server>
 '''
-----
+
+Mirror
 
 '''
-<mirror>
+
+   <mirror>
       <id>central</id>
       <name>central</name>
       <url>http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/maven-public/</url>
@@ -73,15 +76,13 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
 
 '''
 
-'''
  ##Install Sonar Qube
     
     
  ## CI/CD Pipeline Jenkinfile 
  
  '''
- pipeline {
-
+   pipeline {
     agent any
 
     tools {
@@ -190,8 +191,5 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
         }
     }
 }
-
-
-
 
  '''
