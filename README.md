@@ -1,15 +1,15 @@
 # DevOps_Jenkin_Ansible_Terraform_Azure
 
-1. Created sample application using <b>spring-boot</>b
+1. Created sample application using <b>spring-boot</b>
 
-2. Maven for build and Nexus for dependency and packaging
+2. <b>Maven</b> for build and <b>Nexus</b> for dependency and packaging
 
-3. SonarQube for code quality and vulnerability check
+3. <b>SonarQube</b> for code quality and vulnerability check
 
-4. Terraform for provisioning VM on Azure
+4. <b>Terraform</b> for provisioning VM on <b>Azure</b>
 
-5. Ansible to install java and run application on VM 
+5. <b>Ansible</b> to install java and run application on VM 
 
-6. Jmeter for load testing
+6. <b>Jmeter</b> for load testing
 
 7. Destroy VM from Azure
