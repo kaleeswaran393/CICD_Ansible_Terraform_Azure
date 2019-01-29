@@ -1,6 +1,6 @@
 # DevOps_Jenkin_Ansible_Terraform_Azure
 
-1. Created sample application using spring-boot
+1. Created sample application using <b>spring-boot</>b
 
 2. Maven for build and Nexus for dependency and packaging
 
