@@ -21,6 +21,7 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
 ## steps to connect repo from project and maven settings.xml
 
 ###Changes in pom.xml
+
 '''
 <repositories>
         <repository>
@@ -44,11 +45,13 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
             <url>http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc/</url>
         </repository>
     </distributionManagement>
-    
-    '''
+
+'''
+
 ###Settings.xml
 
  '''
+ 
  <server>
       <id>nexus-dellemc</id>
       <username>admin</username>
@@ -61,6 +64,7 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
       <username>admin</username>
       <password>admin123</password>
 </server>
+
 '''
 
 Mirror
