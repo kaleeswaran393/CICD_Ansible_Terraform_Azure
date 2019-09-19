@@ -444,3 +444,17 @@ output "public_ip_address" {
       become: yes
 
 ```
+
+docker exec -u root -it jenkins bash
+
+docker run -it -d -u root -e GIT_SSL_NO_VERIFY=1 -v mystorage:/app --name jenkins -p 9090:8080 jenkins/jenkins
+
+az client installation
+
+https://mohitgoyal.co/2018/06/11/install-azure-cli-2-0-on-ubuntu/
+
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
+az login -u <username>-p <password>
+
+docker run -d -p 7070:8081 --name nexus sonatype/nexus3
