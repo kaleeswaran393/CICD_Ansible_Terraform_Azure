@@ -197,7 +197,7 @@ Mirror
 }
 ```
 
-## Terafrom Script to screat VM on the fly
+## Teraform Script to create VM on the fly
 ```
 resource "azurerm_resource_group" "test" {
   name = "acctestrg"
