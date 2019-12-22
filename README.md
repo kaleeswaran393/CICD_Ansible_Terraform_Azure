@@ -1,5 +1,7 @@
 # DevOps_Jenkin_Ansible_Terraform_Azure
 
+This is demo guide you how to install and automate VM provisionaing, application deployment using jenking, ansible and terraform using Jenkin pipelin. you need Azure subscription to perform this demo.
+
 
 1. Created sample application using <b>spring-boot</b>
 
