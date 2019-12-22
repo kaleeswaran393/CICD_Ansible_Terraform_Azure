@@ -34,7 +34,7 @@
 
 9.docker run -d -p 7070:8081 --name nexus sonatype/nexus3
 
-
+10. install ngrok to access jenkin and nexus remotely
 
 ## Steps to install private repo on Azure VM
 
