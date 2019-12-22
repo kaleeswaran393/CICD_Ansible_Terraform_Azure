@@ -1,6 +1,5 @@
 # DevOps_Jenkin_Ansible_Terraform_Azure
 
-![Screenshot](devOps.png)
 
 1. Created sample application using <b>spring-boot</b>
 
@@ -17,6 +16,8 @@
 7. Destroy VM from Azure
 
 ## Steps to install Jenkin and nexus
+
+![Screenshot](devOps.png)
 
 1.Install docker on you laptop/deskptop
 
