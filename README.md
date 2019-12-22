@@ -1,6 +1,6 @@
 # DevOps_Jenkin_Ansible_Terraform_Azure
 
-![Screenshot](DevOps.png)
+![Screenshot](devOps.png)
 
 1. Created sample application using <b>spring-boot</b>
 
