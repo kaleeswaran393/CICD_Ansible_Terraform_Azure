@@ -1,5 +1,7 @@
 # DevOps_Jenkin_Ansible_Terraform_Azure
 
+![Screenshot](DevOps.png)
+
 1. Created sample application using <b>spring-boot</b>
 
 2. <b>Maven</b> for build and <b>Nexus</b> for dependency and packaging
