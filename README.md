@@ -14,6 +14,28 @@
 
 7. Destroy VM from Azure
 
+## Steps to install Jenkin and nexus
+
+1.Install docker on you laptop/deskptop
+
+2.install jenkin image
+
+3.docker exec -u root -it jenkins bash
+
+4.docker run -it -d -u root -e GIT_SSL_NO_VERIFY=1 -v mystorage:/app --name jenkins -p 9090:8080 jenkins/jenkins
+
+5.az client installation
+
+6.https://mohitgoyal.co/2018/06/11/install-azure-cli-2-0-on-ubuntu/
+
+7.https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
+8.az login -u <username>-p <password>
+
+9.docker run -d -p 7070:8081 --name nexus sonatype/nexus3
+
+
+
 ## Steps to install private repo on Azure VM
 
 https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
@@ -30,7 +52,7 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
         </repository>
         <repository>
             <id>maven-public</id>
-            <url>http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/maven-public/</url>
+            <url>http://nexu.eastus.cloudapp.azure.com:8081/repository/maven-public/</url>
         </repository>
     </repositories>
     <pluginRepositories>
@@ -42,7 +64,7 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
     <distributionManagement>
         <repository>
             <id>nexus-dellemc</id>
-            <url>http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc/</url>
+            <url>http://nexu.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc/</url>
         </repository>
     </distributionManagement>
 ```
@@ -73,7 +95,7 @@ Mirror
    <mirror>
       <id>central</id>
       <name>central</name>
-      <url>http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/maven-public/</url>
+      <url>http://nexus.eastus.cloudapp.azure.com:8081/repository/maven-public/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
     
@@ -380,7 +402,7 @@ output "public_ip_address" {
       application_version: "1.0.0"
       application_group_id: "org.springframework"
       application_artifact_id: "rest-service"
-      application_repository_url: "http://nexu-dellemc.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc"
+      application_repository_url: "http://nexu.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc"
   tasks:
     - name: Create tools home
       file:
@@ -445,16 +467,4 @@ output "public_ip_address" {
 
 ```
 
-docker exec -u root -it jenkins bash
 
-docker run -it -d -u root -e GIT_SSL_NO_VERIFY=1 -v mystorage:/app --name jenkins -p 9090:8080 jenkins/jenkins
-
-az client installation
-
-https://mohitgoyal.co/2018/06/11/install-azure-cli-2-0-on-ubuntu/
-
-https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
-
-az login -u <username>-p <password>
-
-docker run -d -p 7070:8081 --name nexus sonatype/nexus3
