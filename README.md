@@ -1,4 +1,4 @@
-# Build, Test, Package, provisioning, and Deploy
+# Build(Maven), Test(Junit & SonarQube), Package(Nexus), Provision(Terraform), and Deploy(Ansible)
 
 Demo about build java application, test using Junit, Run Code quality tool SonarQube, Package and push the package into nexus, provision Azure VM using Terraform, deploy into azure VM using Ansible.
 
