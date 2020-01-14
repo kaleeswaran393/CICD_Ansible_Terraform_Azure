@@ -1,4 +1,6 @@
-# DevOps_Jenkin_Ansible_Terraform_Azure
+# Build, Test, Package, provisioning, and Deploy
+
+Demo about build java application, test using Junit, Run Code quality tool SonarQube, Package and push the package into nexus, provision Azure VM using Terraform, deploy into azure VM using Ansible.
 
 This is demo guide you how to install and automate VM provisionaing, application deployment using jenking, ansible and terraform using Jenkin pipelin. you need Azure subscription to perform this demo.
 
