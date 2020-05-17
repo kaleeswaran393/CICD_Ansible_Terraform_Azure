@@ -70,7 +70,7 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
     </pluginRepositories>
     <distributionManagement>
         <repository>
-            <id>nexus-dellemc</id>
+            <id>nexus-demo</id>
             <url>http://nexu.eastus.cloudapp.azure.com:8081/repository/nexus-demo/</url>
         </repository>
     </distributionManagement>
@@ -335,7 +335,7 @@ resource "azurerm_availability_set" "avset" {
 
 resource "azurerm_virtual_machine" "test" {
   count = 1
-  name = "dellemc_demo"
+  name = "demo_demo"
   location = "${azurerm_resource_group.test.location}"
   availability_set_id = "${azurerm_availability_set.avset.id}"
   resource_group_name = "${azurerm_resource_group.test.name}"
@@ -375,7 +375,7 @@ resource "azurerm_virtual_machine" "test" {
   }
 
   os_profile {
-    computer_name = "dellemcdemovm"
+    computer_name = "demovm"
     admin_username = "testadmin"
     admin_password = "Password1234!"
   }
