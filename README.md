@@ -1,4 +1,4 @@
-# Build(Maven), Test(Junit & SonarQube), Package(Nexus), Provision(Terraform), and Deploy(Ansible)
+# Build:Maven, Test:Junit, SAST/CVE:SonarQube, Package:Nexus, Provision:Terraform, Deploy:Ansible, Run: Azure 
 
 Demo about build java application, test using Junit, Run Code quality tool SonarQube, Package and push the package into nexus, provision Azure VM using Terraform, deploy into azure VM using Ansible.
 
