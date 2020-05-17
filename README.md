@@ -71,7 +71,7 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
     <distributionManagement>
         <repository>
             <id>nexus-dellemc</id>
-            <url>http://nexu.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc/</url>
+            <url>http://nexu.eastus.cloudapp.azure.com:8081/repository/nexus-demo/</url>
         </repository>
     </distributionManagement>
 ```
@@ -81,7 +81,7 @@ https://medium.com/@incubusattax/setting-up-nexus-oss-in-azure-3d5f38e1f53c
 ```
  
  <server>
-      <id>nexus-dellemc</id>
+      <id>nexus-demo</id>
       <username>admin</username>
       <password>admin123</password>
 </server>
@@ -254,7 +254,7 @@ resource "azurerm_public_ip" "test" {
   resource_group_name = "${azurerm_resource_group.test.name}"
   allocation_method       = "Static"
   idle_timeout_in_minutes = 30
-  domain_name_label="dellemcappdemo"
+  domain_name_label="demo"
   tags {
     environment = "staging"
   }
@@ -409,7 +409,7 @@ output "public_ip_address" {
       application_version: "1.0.0"
       application_group_id: "org.springframework"
       application_artifact_id: "rest-service"
-      application_repository_url: "http://nexu.eastus.cloudapp.azure.com:8081/repository/nexus-dellemc"
+      application_repository_url: "http://nexu.eastus.cloudapp.azure.com:8081/repository/nexus-demo"
   tasks:
     - name: Create tools home
       file:
